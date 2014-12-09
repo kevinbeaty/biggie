@@ -39,7 +39,15 @@ window.onload = function() {
         if (window.location.hash !== n) window.location.hash = n;
         document.title = e.textContent || e.innerText;
     }
-    document.onclick = function() { go(++cur % (s.length)); };
+    var full = false;
+    document.onclick = function() {
+        if(!full){
+            full = true;
+            fullscreen();
+        } else {
+            go(++cur % (s.length));
+        }
+    };
     function fwd() { go(Math.min(s.length - 1, ++cur)); }
     function rev() { go(Math.max(0, --cur)); }
     document.onkeydown = function(e) {
@@ -64,6 +72,19 @@ window.onload = function() {
         var c = parse_hash();
         if (c !== cur) go(c);
     };
+    function fullscreen() {
+      var element = document.documentElement;
+      // http://davidwalsh.name/fullscreen
+      if(element.requestFullscreen) {
+        element.requestFullscreen();
+      } else if(element.mozRequestFullScreen) {
+        element.mozRequestFullScreen();
+      } else if(element.webkitRequestFullscreen) {
+        element.webkitRequestFullscreen();
+      } else if(element.msRequestFullscreen) {
+        element.msRequestFullscreen();
+      }
+    }
     go(cur);
 };
 </script></head><body>
