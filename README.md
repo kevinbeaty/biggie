@@ -1,4 +1,5 @@
 # biggie
+This is a fork for [kevinbeaty](https://github.com/kevinbeaty/biggie) with additions inspired by [killercup](https://github.com/killercup/biggie).
 
 ![](mascot.jpg)
 
@@ -39,6 +40,11 @@ To bake `js/site.js` for static serving, run
 
 * [killercup's fork](http://killercup.github.io/biggie/) ([src](https://github.com/killercup/biggie)) adds localStorage backup,
   code highlighting, and style tweaks.
+
+## Differences in this fork inspired by @killercup
+
+- Add code highlighting using [highlight.js](http://softwaremaniacs.org/soft/highlight/en/) and extend *original* stylesheet with *Monokai Sublime* theme
+- Small tweaks for *original* stylesheet
 
 ## license
 

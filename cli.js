@@ -4,7 +4,14 @@ var concat = require('concat-stream'),
     fs = require('fs'),
     mustache = require('mustache'),
     argv = require('minimist')(process.argv.slice(2)),
+    hljs = require('highlight.js'),
     marked = require('marked');
+
+marked.setOptions({
+  highlight: function (code, lang) {
+    return hljs.highlightAuto(code).value;
+  }
+});
 
 if (process.stdin.isTTY && !argv._[0]) {
     process.stdout.write(fs.readFileSync(__dirname + '/HELP.md'));
@@ -24,6 +31,6 @@ function convert(data) {
         fs.readFileSync(__dirname + '/js/template.hbs', 'utf8'), {
         title: 'Foo',
         slides: divs,
-        style: fs.readFileSync(argv.style || (__dirname + '/js/style/classic.hbs'))
+        style: fs.readFileSync(argv.style || (__dirname + '/js/style/original.hbs'))
     }));
 }

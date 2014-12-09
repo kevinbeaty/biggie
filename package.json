@@ -16,14 +16,16 @@
     "underscore": "~1.6.0",
     "concat-stream": "~1.4.1",
     "mustache": "~0.8.1",
-    "minimist": "0.0.8"
+    "minimist": "0.0.8",
+    "highlight.js": "~8.4.0"
   },
   "repository": "git@github.com:tmcw/biggie.git",
   "author": "Tom MacWright <tom@macwright.org>",
   "license": "BSD",
   "devDependencies": {
     "beefy": "~1.1.0",
-    "hbsfy": "~1.3.2"
+    "hbsfy": "~1.3.2",
+    "browserify": "~7.0.0"
   },
   "browserify": {
     "transform": [
