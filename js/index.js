@@ -12,7 +12,7 @@ var styles = {
 
 marked.setOptions({
   highlight: function (code, lang) {
-    return hljs.highlightAuto(code).value;
+    return hljs.highlight(lang, code).value;
   }
 });
 
